@@ -43,7 +43,7 @@ public static class NoiseGenerator
         {
             float n1 = SimplexNoise.Noise.CalcPixel3DFractal(worldPosition.x, worldPosition.y, worldPosition.z, 0.09f, 3);
 
-            if (n1 < .15f)
+            if (n1 < .25f)
             {
                 // Common resource
                 voxel = Voxel.Brick;
