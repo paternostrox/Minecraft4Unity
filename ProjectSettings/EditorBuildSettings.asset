@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 46b9db07df35e7c41b7014ff113cf697
+  - enabled: 1
+    path: Assets/Scenes/VoxelWorld.unity
+    guid: c44c3a8181869f64ba815c9ed44bf908
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0dc4d4e9e6281f148b8e7a306b35b523,
+      type: 2}

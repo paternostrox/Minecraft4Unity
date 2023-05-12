@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a0dcc1c9213d74c92cc462a0937f35, type: 3}
+  m_Name: BrickBlock
+  m_EditorClassIdentifier: 
+  id: 4e36489a-feb9-49e5-bdcc-687c070d66f1
+  thumbnail: {fileID: 0}
+  prefab: {fileID: 0}
+  name: Brick
+  description: A block of brick.
+  reusable: 0
+  maxStack: 32
+  volume: {x: 1, y: 1, z: 1}
+  pivot: 0
+  snapType: 0
+  isUnique: 0
+  voxelType: 2
