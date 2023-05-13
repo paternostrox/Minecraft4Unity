@@ -3856,7 +3856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5855425ffab0914ebc5e1c5e08cb84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 587170011}
+  target: {fileID: 2134748502}
   chunkSpawnSize: {x: 2, y: 1}
   chunkMaterial: {fileID: 2100000, guid: 0fbb6114864c2014b87fc493434a98af, type: 2}
   maxGenerateChunksInFrame: 1
