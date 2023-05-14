@@ -5312,6 +5312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
+  - {fileID: 11400000, guid: e4cb3b51cfb3ef94ab3a7d436a7df46b, type: 2}
+  - {fileID: 11400000, guid: 14ca430a4ad53ed418c2640384afadf2, type: 2}
   - {fileID: 11400000, guid: 92e938caf83744c449460d52d8e4bfaa, type: 2}
 --- !u!114 &1352416086
 MonoBehaviour:
@@ -8237,7 +8239,7 @@ MonoBehaviour:
   selectionIndicatorUI: {fileID: 1658847765}
   graphicRaycaster: {fileID: 2107211182}
   inventoryPanel: {fileID: 577491860}
-  stashPanel: {fileID: 0}
+  stashPanel: {fileID: 1724770033}
   tooltip: {fileID: 307063669}
   tooltipOffset: {x: 1, y: -1, z: 0}
 --- !u!1 &2114530368
@@ -8429,7 +8431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockSelection: {fileID: 597739718}
   highlightVoxel: 0
-  canPlace: 1
+  canPlace: 0
   canGrab: 1
 --- !u!114 &2134748504
 MonoBehaviour:

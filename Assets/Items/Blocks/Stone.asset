@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18a0dcc1c9213d74c92cc462a0937f35, type: 3}
-  m_Name: BrickBlock
+  m_Name: Stone
   m_EditorClassIdentifier: 
-  id: 4e36489a-feb9-49e5-bdcc-687c070d66f1
-  thumbnail: {fileID: 0}
+  id: 0873748d-4859-4cff-b936-bcd70719a32c
+  thumbnail: {fileID: 21300000, guid: 52b2bda3ac0fe8448afd49e307bd1da9, type: 3}
   prefab: {fileID: 0}
-  name: Brick
-  description: A block of brick.
+  name: Stone
+  description: A block of stone.
   reusable: 0
   maxStack: 32
   volume: {x: 1, y: 1, z: 1}
   pivot: 0
   snapType: 0
   isUnique: 0
-  voxelType: 2
+  voxelType: 1

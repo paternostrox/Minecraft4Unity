@@ -33,7 +33,12 @@ public class VoxelPlacer : MonoBehaviour
 
                 if (Input.GetMouseButtonDown(1) && canGrab)
                 {
+                    Voxel voxel;
+                    TerrainManager.Main.GetVoxel(hit.point + ray.direction * 0.01f, out voxel);
+                    Debug.Log(voxel.ToString());
                     TerrainManager.Main.SetVoxel(hit.point + ray.direction * 0.01f, Voxel.Air);
+                    ItemStack itemStack = new ItemStack(ItemDatabase.Main.GetCopy(voxel.ToString()));
+                    ContainerManager.Main.TryAlterContainer(itemStack);
                 }
             }
         }
