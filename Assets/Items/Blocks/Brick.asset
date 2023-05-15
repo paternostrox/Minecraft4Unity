@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Brick
   m_EditorClassIdentifier: 
   id: 4e36489a-feb9-49e5-bdcc-687c070d66f1
-  thumbnail: {fileID: 21300000, guid: 52b2bda3ac0fe8448afd49e307bd1da9, type: 3}
+  thumbnail: {fileID: 21300000, guid: 5554be46650bd1846ba0b5682f163e43, type: 3}
   prefab: {fileID: 0}
   name: Brick
   description: A block of brick.

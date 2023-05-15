@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Stone
   m_EditorClassIdentifier: 
   id: 0873748d-4859-4cff-b936-bcd70719a32c
-  thumbnail: {fileID: 21300000, guid: 52b2bda3ac0fe8448afd49e307bd1da9, type: 3}
+  thumbnail: {fileID: 21300000, guid: d2170e515e50f294ab66da702f5dadd2, type: 3}
   prefab: {fileID: 0}
   name: Stone
   description: A block of stone.
