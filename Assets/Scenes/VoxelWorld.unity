@@ -8033,7 +8033,7 @@ GameObject:
   - component: {fileID: 2080997726}
   - component: {fileID: 2080997724}
   m_Layer: 5
-  m_Name: HandSlot
+  m_Name: InvHandSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

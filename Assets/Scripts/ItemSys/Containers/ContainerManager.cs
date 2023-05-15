@@ -78,7 +78,7 @@ public class ContainerManager : Singleton<ContainerManager>
         {
             selectedHotbarSlotIndex = (selectedHotbarSlotIndex + (int)Mathf.Sign(wheelInput)) % hotbarSlotIDs.Length;
             if (selectedHotbarSlotIndex < 0) selectedHotbarSlotIndex += hotbarSlotIDs.Length;
-            selectionIndicatorUI.anchoredPosition = new Vector3(-1f + selectedHotbarSlotIndex * 17f, .25f, 0f);
+            selectionIndicatorUI.anchoredPosition = new Vector3(15f + selectedHotbarSlotIndex * 17f, .25f, 0f);
         }
     }
 
