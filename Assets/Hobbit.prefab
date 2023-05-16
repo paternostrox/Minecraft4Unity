@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8448293687434890744}
   - component: {fileID: 2520150047513861790}
   - component: {fileID: -4449530888017246728}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hobbit
   m_TagString: Untagged
   m_Icon: {fileID: 0}

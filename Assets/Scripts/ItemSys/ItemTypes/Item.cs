@@ -33,7 +33,7 @@ public abstract class Item : ScriptableObject
 
     public override string ToString()
     {
-        return string.Concat(name, "\n", GetType().FullName, "\n", description);
+        return string.Concat(name, " - ", GetType().FullName, "\n", description);
     }
 
     public virtual ItemData GetData()

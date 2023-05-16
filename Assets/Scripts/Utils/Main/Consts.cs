@@ -6,7 +6,7 @@ public static class Consts
 
     public const float InteractionDistance = 4f;
 
-    public const int InteractableStaticLayer = 10;
+    public const int InteractableStaticLayer = 9;
 
     public const int InteractableDynamicLayer = 11;
 
