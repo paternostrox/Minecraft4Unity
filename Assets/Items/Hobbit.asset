@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hobbit
   m_EditorClassIdentifier: 
   id: 8c47ce22-e969-493e-938f-5e6326ed7388
-  thumbnail: {fileID: 21300000, guid: dcea51d6065d64246aeec467afeff684, type: 3}
+  thumbnail: {fileID: 21300000, guid: 22a53d81ba242e1449da2955edab3aaa, type: 3}
   prefab: {fileID: 399674800833869000, guid: 2076bedfacbf8a442951233afbbf54b1, type: 3}
   name: Hobbit
   description: A cute but useless hobbit.
