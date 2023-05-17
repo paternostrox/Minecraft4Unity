@@ -196,7 +196,7 @@ public class ContainerManager : Singleton<ContainerManager>
 
     public void CancelPickSlot()
     {
-        if (handSlot.itemStack.item != null)
+        if (handSlot.itemStack != null && handSlot.itemStack.item != null)
         {
             print(handSlot.itemStack.item);
             ItemSlot lastSlot = UISlots[lastSlotID];
