@@ -126,9 +126,9 @@ public class ContainerManager : Singleton<ContainerManager>
         ItemStack handStack;
         ItemStack slotStack;
 
-        if (handSlot.itemStack == null)
+        if (handSlot.itemStack == null || handSlot.itemStack.item == null)
         {
-            if (itemSlot.itemStack == null)
+            if (itemSlot.itemStack == null || itemSlot.itemStack.item == null)
                 return;
 
             // Hand is empty and slot has item, must pick item
@@ -149,6 +149,8 @@ public class ContainerManager : Singleton<ContainerManager>
             {
                 handStack.amount = itemSlot.itemStack.amount;
             }
+
+            HideTooptip();
         }
         else
         {
@@ -194,8 +196,9 @@ public class ContainerManager : Singleton<ContainerManager>
 
     public void CancelPickSlot()
     {
-        if (handSlot.itemStack != null)
+        if (handSlot.itemStack.item != null)
         {
+            print(handSlot.itemStack.item);
             ItemSlot lastSlot = UISlots[lastSlotID];
             PickSlot(lastSlot);
         }
