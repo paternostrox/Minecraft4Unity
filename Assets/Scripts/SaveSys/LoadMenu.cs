@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LoadMenu : MonoBehaviour
 {
     public GameObject saveslot;
+    public GameObject noSavesFoundMessage;
 
     List<GameObject> createdSlots = new List<GameObject>();
 
@@ -31,6 +32,9 @@ public class LoadMenu : MonoBehaviour
     {
         string[] saveNames = SaveUtil.GetAllSaveNames();
 
+        if (saveNames.Length > 0)
+            noSavesFoundMessage.SetActive(false);
+
         foreach (string saveName in saveNames)
         {
             GameObject g = Instantiate(saveslot, transform);
@@ -49,5 +53,6 @@ public class LoadMenu : MonoBehaviour
             Destroy(slot);
         }
         createdSlots.Clear();
+        noSavesFoundMessage.SetActive(true);
     }
 }

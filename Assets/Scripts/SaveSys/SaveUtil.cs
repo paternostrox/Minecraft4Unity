@@ -3,6 +3,7 @@ using System.Collections;
 using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 public static class SaveUtil
 {
@@ -21,6 +22,11 @@ public static class SaveUtil
         return String.Concat(Application.persistentDataPath, "/savedata/", saveName);
     }
 
+    public static string GetSaveFileName()
+    {
+        return Regex.Replace(DateTime.Now.ToString(), @"[^a-zA-Z0-9]+", "-").Trim('-');
+    }
+
     public static string GetAutosavePath()
     {
         return String.Concat(Application.persistentDataPath, "/savedata/autosave/");
@@ -31,9 +37,9 @@ public static class SaveUtil
         return String.Concat(GetAutosavePath(), GetChunkFileName(chunkPosition), "(V).chunk");
     }
 
-    public static string GetChunkItemPath(Vector3Int chunkPosition)
+    public static string GetChunkObjectPath(Vector3Int chunkPosition)
     {
-        return String.Concat(GetAutosavePath(), GetChunkFileName(chunkPosition), "(I).chunk");
+        return String.Concat(GetAutosavePath(), GetChunkFileName(chunkPosition), "(O).chunk");
     }
 
     public static string GetChunkPath(Vector3Int chunkPosition)

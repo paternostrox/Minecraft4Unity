@@ -99,4 +99,9 @@ public class SaveManager : Singleton<SaveManager>
         string savePath = SaveUtil.GetSavePath(saveName);
         Directory.Delete(savePath, true);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
