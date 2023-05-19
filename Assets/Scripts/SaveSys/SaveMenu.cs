@@ -48,7 +48,7 @@ public class SaveMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        string[] saveNames = SaveUtil.GetAllSaveNames();
+        string[] saveNames = SaveUtil.GetAllSavePaths();
 
         if (saveNames.Length > 0)
             noSavesFoundMessage.SetActive(false);

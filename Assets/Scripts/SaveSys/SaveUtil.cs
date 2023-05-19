@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 public static class SaveUtil
 {
@@ -12,9 +13,13 @@ public static class SaveUtil
         return String.Concat(String.Concat(Application.persistentDataPath, "/savedata/"));
     }
 
-    public static string[] GetAllSaveNames()
+    public static string[] GetAllSavePaths(bool includeAutosave = false)
     {
-        return Directory.GetDirectories(String.Concat(Application.persistentDataPath, "/savedata/")).Select(Path.GetFileName).ToArray();
+        List<string> paths = Directory.GetDirectories(String.Concat(Application.persistentDataPath, "/savedata/")).Select(Path.GetFileName).ToList();
+        if(!includeAutosave)
+            paths.RemoveAll(path => path.Contains("autosave"));
+
+        return paths.ToArray();
     }
 
     public static string GetSavePath(string saveName)
@@ -67,7 +72,7 @@ public static class SaveUtil
         {
             return false;
         }
-        string[] oldSaveNames = GetAllSaveNames();
+        string[] oldSaveNames = GetAllSavePaths();
         foreach (string oldSaveName in oldSaveNames)
         {
             if (saveName == oldSaveName)

@@ -30,7 +30,7 @@ public class LoadMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        string[] saveNames = SaveUtil.GetAllSaveNames();
+        string[] saveNames = SaveUtil.GetAllSavePaths(true);
 
         if (saveNames.Length > 0)
             noSavesFoundMessage.SetActive(false);
