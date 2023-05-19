@@ -34,7 +34,7 @@ public class PauseMenu : MonoBehaviour
             panel.SetActive(false);
         }
         isVisible = true;
-        GameManager.IsPaused = true;
+        GameController.IsPaused = true;
     }
 
     public void Hide()
@@ -45,6 +45,6 @@ public class PauseMenu : MonoBehaviour
             panel.SetActive(false);
         }
         isVisible = false;
-        GameManager.IsPaused = false;
+        GameController.IsPaused = false;
     }
 }

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LoadMenu : MonoBehaviour
 {
     public GameObject saveslot;
+    public Transform saveContainer;
     public GameObject noSavesFoundMessage;
 
     List<GameObject> createdSlots = new List<GameObject>();
@@ -30,18 +31,23 @@ public class LoadMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        string[] saveNames = SaveUtil.GetAllSavePaths(true);
+        string[] saveNames = SaveUtil.GetAllSaveNames(true);
 
         if (saveNames.Length > 0)
             noSavesFoundMessage.SetActive(false);
 
         foreach (string saveName in saveNames)
         {
-            GameObject g = Instantiate(saveslot, transform);
+            GameObject g = Instantiate(saveslot, saveContainer);
             g.GetComponentInChildren<TMP_Text>().text = saveName;
             Button[] buttons = g.GetComponentsInChildren<Button>();
             buttons[0].onClick.AddListener(delegate { LoadSlot(saveName); });
-            buttons[1].onClick.AddListener(delegate { DeleteSlot(saveName); });
+
+            if (saveName == "autosave")
+                buttons[1].gameObject.SetActive(false);
+            else
+                buttons[1].onClick.AddListener(delegate { DeleteSlot(saveName); });
+
             createdSlots.Add(g);
         }
     }

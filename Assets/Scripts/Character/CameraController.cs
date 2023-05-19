@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        if (!GameManager.IsPaused)
+        if (!GameController.IsPaused)
         {
             input = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             input *= sensitivity;

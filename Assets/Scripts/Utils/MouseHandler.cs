@@ -25,26 +25,26 @@ public class MouseHandler : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         cursorImage.enabled = true;
-        lastPauseState = GameManager.IsPaused;
+        lastPauseState = GameController.IsPaused;
     }
 
     public void LockMouse()
     {
         Cursor.lockState = CursorLockMode.Locked;
         cursorImage.enabled = false;
-        lastPauseState = GameManager.IsPaused;
+        lastPauseState = GameController.IsPaused;
     }
 
     private void Update()
     {
-        if (GameManager.IsPaused != lastPauseState)
+        if (GameController.IsPaused != lastPauseState)
         {
-            if (GameManager.IsPaused)
+            if (GameController.IsPaused)
                 UnlockMouse();
             else
                 LockMouse();
         }
-        if (GameManager.isPaused)
+        if (GameController.isPaused)
         {
             cursorImageTransform.position = Input.mousePosition;
         }

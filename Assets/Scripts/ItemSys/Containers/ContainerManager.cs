@@ -239,7 +239,7 @@ public class ContainerManager : Singleton<ContainerManager>
         if (showStash)
             stashPanel.SetActive(true);
         isVisible = true;
-        GameManager.IsPaused = true;
+        GameController.IsPaused = true;
     }
 
     public void Hide()
@@ -249,7 +249,7 @@ public class ContainerManager : Singleton<ContainerManager>
         HideTooptip();
         CancelPickSlot();
         isVisible = false;
-        GameManager.IsPaused = false;
+        GameController.IsPaused = false;
     }
     public void RefreshInventory()
     {

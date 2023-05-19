@@ -13,7 +13,7 @@ public static class SaveUtil
         return String.Concat(String.Concat(Application.persistentDataPath, "/savedata/"));
     }
 
-    public static string[] GetAllSavePaths(bool includeAutosave = false)
+    public static string[] GetAllSaveNames(bool includeAutosave = false)
     {
         List<string> paths = Directory.GetDirectories(String.Concat(Application.persistentDataPath, "/savedata/")).Select(Path.GetFileName).ToList();
         if(!includeAutosave)
@@ -72,7 +72,7 @@ public static class SaveUtil
         {
             return false;
         }
-        string[] oldSaveNames = GetAllSavePaths();
+        string[] oldSaveNames = GetAllSaveNames();
         foreach (string oldSaveName in oldSaveNames)
         {
             if (saveName == oldSaveName)

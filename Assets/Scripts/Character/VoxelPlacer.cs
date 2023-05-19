@@ -24,7 +24,7 @@ public class VoxelPlacer : MonoBehaviour
             }
 
             // Set voxel if necessary
-            if (!GameManager.IsPaused)
+            if (!GameController.IsPaused)
             {
                 if (Input.GetMouseButtonDown(0) && canPlace)
                 {

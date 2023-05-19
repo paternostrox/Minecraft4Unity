@@ -21,6 +21,6 @@ public class InteractionManager : Singleton<InteractionManager>
         // Hide all Panels
         itemGiverPanel.SetActive(false);
         itemInteractionPanel.SetActive(false);
-        GameManager.IsPaused = false;
+        GameController.IsPaused = false;
     }
 }

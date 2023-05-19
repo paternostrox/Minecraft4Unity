@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
     private int m_JumpTimer;
 
 
-    private void Start()
+    private void Awake()
     {
         // Saving component references to improve performance.
         m_Transform = GetComponent<Transform>();
