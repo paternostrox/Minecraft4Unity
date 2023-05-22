@@ -10,6 +10,7 @@ public class SaveMenu : MonoBehaviour
 {
     public GameObject saveslot;
     public GameObject noSavesFoundMessage;
+    public Transform saveContainer;
     public GameObject ovewritePopup;
 
     List<GameObject> createdSlots = new List<GameObject>();
@@ -55,7 +56,7 @@ public class SaveMenu : MonoBehaviour
 
         foreach (string saveName in saveNames)
         {
-            GameObject g = Instantiate(saveslot, transform);
+            GameObject g = Instantiate(saveslot, saveContainer);
             g.GetComponentInChildren<TMP_Text>().text = saveName;
             Button[] buttons = g.GetComponentsInChildren<Button>();
             buttons[0].onClick.AddListener(delegate { OverwriteConfirmation(saveName); });

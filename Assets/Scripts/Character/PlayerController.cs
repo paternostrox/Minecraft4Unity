@@ -243,6 +243,7 @@ public class PlayerController : MonoBehaviour
 
     public void SetData(WorldPlacementData data)
     {
+        print("POS " + data.position[0] + " " + data.position[1] + " " + data.position[2]);
         m_Transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
         m_Transform.rotation = Quaternion.Euler(data.rotation[0], data.rotation[1], data.rotation[2]);
         m_Transform.localScale = new Vector3(data.scale[0], data.scale[1], data.scale[2]);

@@ -14,7 +14,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
     #region Serialization
 
-    private void Start()
+    private void Awake()
     {
         TryLoad();
     }
