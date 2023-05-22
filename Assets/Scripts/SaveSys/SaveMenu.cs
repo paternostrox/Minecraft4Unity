@@ -11,13 +11,16 @@ public class SaveMenu : MonoBehaviour
     public GameObject saveslot;
     public GameObject noSavesFoundMessage;
     public Transform saveContainer;
-    public GameObject ovewritePopup;
+    public GameObject overwritePopup;
 
     List<GameObject> createdSlots = new List<GameObject>();
 
     public void OverwriteConfirmation(string slotName)
     {
-        Button[] buttons = ovewritePopup.GetComponentsInChildren<Button>();
+        gameObject.SetActive(false);
+        overwritePopup.SetActive(true);
+        Button[] buttons = overwritePopup.GetComponentsInChildren<Button>();
+        buttons[0].onClick.RemoveAllListeners();
         buttons[0].onClick.AddListener(delegate { SaveOnSlot(slotName); });
     }
 
@@ -33,6 +36,7 @@ public class SaveMenu : MonoBehaviour
     {
         string newSaveName = SaveUtil.GetSaveFileName();
         SaveManager.Main.Save(newSaveName);
+        Reset();
     }
 
     public void DeleteSlot(string slotName)

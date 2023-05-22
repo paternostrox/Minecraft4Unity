@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     bool isVisible = false;
 
     public GameObject pausePanel;
+    public GameObject HUDCenter;
     public GameObject[] otherPanels;
 
     private void Start()
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     public void Show()
     {
         pausePanel.SetActive(true);
+        HUDCenter.SetActive(false);
         foreach (GameObject panel in otherPanels)
         {
             panel.SetActive(false);
@@ -40,6 +42,7 @@ public class PauseMenu : MonoBehaviour
     public void Hide()
     {
         pausePanel.SetActive(false);
+        HUDCenter.SetActive(true);
         foreach (GameObject panel in otherPanels)
         {
             panel.SetActive(false);
