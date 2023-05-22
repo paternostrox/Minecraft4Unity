@@ -16,7 +16,7 @@ public class VoxelPlacer : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         if (Physics.Raycast(ray, out RaycastHit hit, Consts.InteractionDistance, Consts.VoxelMask))
         {
-            if (highlightVoxel)
+            if (highlightVoxel && blockSelection)
             {
                 PlacementData posRot = ItemUtil.Snap(ray.direction, hit.point + ray.direction * 0.01f, Vector3Int.one, ItemPivot.MidCenter, SnapType.Center);
                 blockSelection.transform.position = posRot.position;
@@ -46,7 +46,7 @@ public class VoxelPlacer : MonoBehaviour
         }
         else
         {
-            blockSelection.SetActive(false);
+            blockSelection?.SetActive(false);
         }
     }
 }
