@@ -65,7 +65,7 @@ public class ContainerManager : Singleton<ContainerManager>
                 Show();
         }
         CheckChangeSelection();
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isVisible)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameController.IsPaused)
         {
             UseHotbarItem(selectedHotbarSlotIndex);
         }
