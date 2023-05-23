@@ -1,5 +1,5 @@
 # :crystal_ball: Minecraft4Unity
-A minimal and very optimized version of Minecraft made in Unity.  It features procedural world generation, greedy meshing, persistence and an inventory system.
+A minimal and very optimized version of Minecraft made in Unity.  It features procedural world generation, greedy meshing, data persistence and an inventory system.
 
 ## :fire: Basic setup:
 
@@ -10,6 +10,6 @@ All the packages needed for the project will import automatically when opening i
 
 ### Procedural generation
 
-### Persistance
+### Data persistence
 
 ### Inventory system
