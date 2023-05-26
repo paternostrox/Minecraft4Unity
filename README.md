@@ -16,7 +16,7 @@ All the packages needed for the project will import automatically when opening i
 The inventory system is similar to what you would see in the original game. 
 
 - Allows the player to stack items until a certain limit predefined by the item type.
-- Has a hotbar, so the player can use items adquired through gameplay with the game world.
+- Has a hotbar & backpack UI, so the player can manage which items will be used or kept.
 - It has pretty much the same organizational features as the original, including:
   - Item swap: Picking an item from a slot (LMB) and placing it in an occupied slot will automatically pick the item occupying it.
   - Take half: The player can pick half the amount of a stack (RMB) in any stack with more than one items. 
