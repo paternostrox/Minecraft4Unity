@@ -13,3 +13,11 @@ All the packages needed for the project will import automatically when opening i
 ### Data persistence
 
 ### Inventory system
+The inventory system is similar to what you would see in the original game. 
+
+- Allows the player to stack items until a certain limit predefined by the item type.
+- Has a hotbar, so the player can use the adquired items with the game world.
+- It has pretty much the same organizational features as the original, including:
+  - Item swap: Picking an item (RMB) 
+  - Take half: 
+  - Eyedropper: 
