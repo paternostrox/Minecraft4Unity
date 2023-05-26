@@ -13,7 +13,7 @@ All the packages needed for the project will import automatically when opening i
 ### Procedural generation
 
 ### Data persistence
-The system supports saving and loading any progress made. The state of the game can be represented by two data types:
+The system supports saving and loading any progress made. The state of the game can be represented as follows:
 - Player Data: All player data is stored in a single file. A
 - World Data: There is two files for each chunk of land (one for terrain data and one for object data). 
   - The terrain data file is a very long byte array, where each byte represents a single terrain voxel.
