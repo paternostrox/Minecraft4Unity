@@ -17,7 +17,7 @@ The system supports saving and loading any progress made. The state of the game 
 - Player Data: All player data is stored in a single file. It includes player positional data, stats data (health, mana stamina and skills) and inventory data (items and their organization).
 - World Data: There is two files for each chunk of land (one for terrain data and one for object data). 
   - The terrain data file is a very long byte array, where each byte represents a single terrain voxel.
-  - The object data file describes all objects placed by the player in the world. Each object type has it's own way of serializing itself, but all objects must have at least positional data.
+  - The object data file describes all non-voxel objects placed by the player in the world. Each object type has it's own way of serializing itself, but all objects must have at least positional data.
 
 An autosave system is also provided, saving the state of the game whenever new chunks of land are generated (and old ones are destroyed).
 
