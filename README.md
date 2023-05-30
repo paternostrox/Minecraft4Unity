@@ -14,7 +14,7 @@ All the packages needed for the project will import automatically when opening i
 
 ### Data persistence
 The system supports saving and loading any progress made. The state of the game can be represented as follows:
-- Player Data: All player data is stored in a single file. A
+- Player Data: All player data is stored in a single file. It includes player positional data, stats data (health, mana stamina and skills) and inventory data (items and their organization).
 - World Data: There is two files for each chunk of land (one for terrain data and one for object data). 
   - The terrain data file is a very long byte array, where each byte represents a single terrain voxel.
   - The object data file describes all objects placed by the player in the world. Each object type has it's own way of serializing itself, but all objects must have at least positional data.
