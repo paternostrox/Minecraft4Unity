@@ -11,6 +11,15 @@ All the packages needed for the project will import automatically when opening i
 ## :desktop_computer: Code description
 
 ### Procedural generation
+While exploring the world, the game generates land and objects around the player position. Each chunk goes through the following process:
+
+> 3D Simplex Noise -> Noise Interpretation -> Mesh & Collider Generation (Greedy Meshing) -> Object Spawning
+
+The basis for the procedural generation is a simplex noise function that is interpreted 
+
+An atlas shader takes care of 
+
+For performance reasons, the game world is divided in chunks, like in the original game.
 
 ### Data persistence
 The system supports saving and loading any progress made. The state of the game can be represented as follows:
