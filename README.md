@@ -13,13 +13,13 @@ All the packages needed for the project will import automatically when opening i
 ### Procedural generation
 While exploring the world, the game generates land and objects around the player position. Each chunk goes through the following process:
 
-> 3D Simplex Noise -> Noise Interpretation -> Mesh & Collider Generation (Greedy Meshing) -> Object Spawning
+> 3D Simplex Noise -> Block Data Generation -> Mesh & Collider Generation (Greedy Meshing) -> Object Spawning
 
-The basis for the procedural generation is a simplex noise function that is interpreted 
+The basis for the procedural generation is a simplex noise function that is interpreted by the system. The system attributes different voxel types (e.g. air, stone, brick) for different value ranges. The block data then is used to generate the chunk meshes and colliders. The collider data is then used to spawn non-voxel objects (e.g. characters, items) in the chunk, they are placed randomly on top of ground voxels.
 
 An atlas shader takes care of 
 
-For performance reasons, the game world is divided in chunks, like in the original game.
+For performance reasons, the game world is divided in chunks, like in the original game. Unity job system is used in some of the most computer intensive tasks, like in mesh and collider generation.
 
 ### Data persistence
 The system supports saving and loading any progress made. The state of the game can be represented as follows:
