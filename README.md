@@ -19,7 +19,7 @@ The basis for the procedural generation is a simplex noise function that is inte
 
 [PROCEDURAL GENERATION GIF GOES HERE]
 
-Special thanks to bbtarzan12 for creating a good basis for voxel procedural terrain generation, which this project is built upon. His project can be found in [here](https://github.com/bbtarzan12/Unity-Procedural-Voxel-Terrain).
+Special thanks to bbtarzan12 for creating a good basis for procedural voxel terrain generation, which this project is built upon. His project can be found in [here](https://github.com/bbtarzan12/Unity-Procedural-Voxel-Terrain).
 
 ### Data persistence
 The system supports saving and loading any progress made. The state of the game can be represented as follows:
