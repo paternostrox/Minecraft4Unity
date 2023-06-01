@@ -1,7 +1,7 @@
 # :crystal_ball: Minecraft4Unity
 A minimal and very optimized version of Minecraft made in Unity.  It features procedural world generation with greedy meshing, data persistence and an inventory system.
 
-[GAME GIF GOES HERE]
+[GAME IMG GOES HERE]
 
 ## :fire: Basic setup:
 
@@ -16,6 +16,8 @@ While exploring the world, the game generates land and objects around the player
 > 3D Simplex Noise -> Block Data Generation -> Mesh & Collider Generation (Greedy Meshing) -> Object Spawning
 
 The basis for the procedural generation is a simplex noise function that is interpreted by the system. The system attributes different voxel types (e.g. air, stone, brick) for different value ranges. The block data is then used to generate the chunk meshes and colliders. The collider data is then used to spawn non-voxel objects (e.g. characters, items) in the chunk, which are placed randomly on top of ground voxels. An atlas shader takes care of texturing the chunk according to the UV data built by the mesh generation. The Unity job system is used in the most compute-intensive tasks, like in mesh and collider generation.
+
+[PROCEDURAL GENERATION GIF GOES HERE]
 
 Special thanks to bbtarzan12 for creating a good basis for voxel procedural terrain generation, which this project is built upon. His project can be found in [here](https://github.com/bbtarzan12/Unity-Procedural-Voxel-Terrain).
 
