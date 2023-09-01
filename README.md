@@ -1,5 +1,5 @@
 # :crystal_ball: Minecraft4Unity
-A minimal and very optimized version of Minecraft made in Unity, virtually infinite in all three axis.  It features procedural world generation with greedy meshing, data persistence and an inventory system.
+A minimal and very optimized version of Minecraft made in Unity, virtually endless in all three axis.  It features procedural world generation with greedy meshing, data persistence and an inventory system.
 
 [GAME IMG GOES HERE]
 
