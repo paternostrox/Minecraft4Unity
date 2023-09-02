@@ -20,6 +20,8 @@ public class ContainerManager : Singleton<ContainerManager>
     int selectedHotbarSlotIndex = 0; // Currently selected hotbar slot
     public RectTransform selectionIndicatorUI;
 
+    public GameObject HUDCenter;
+
     private void Start()
     {
         // Define slots
@@ -235,6 +237,7 @@ public class ContainerManager : Singleton<ContainerManager>
 
     public void Show(bool showStash = false)
     {
+        HUDCenter.SetActive(false);
         inventoryPanel.SetActive(true);
         if (showStash)
             stashPanel.SetActive(true);
@@ -244,6 +247,7 @@ public class ContainerManager : Singleton<ContainerManager>
 
     public void Hide()
     {
+        HUDCenter.SetActive(true);
         inventoryPanel.SetActive(false);
         stashPanel.SetActive(false);
         HideTooptip();
