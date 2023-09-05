@@ -33,7 +33,7 @@ An autosave system is also provided, saving the state of the game whenever new c
 ### Inventory system
 The inventory system is similar to what you would see in the original game.
 
-[INVENTORY GIF GOES HERE]
+![inventory2](https://github.com/paternostrox/Minecraft4Unity/assets/19597048/9ec1320f-ea05-4198-b65d-ce23ea2af9c4)
 
 - Allows the player to stack items until a certain limit predefined by the item type.
 - Has a hotbar & backpack UI, so the player can manage which items will be used or kept.
