@@ -18,7 +18,7 @@ While exploring the world, the game generates land and objects around the player
 
 The basis for the procedural generation is a simplex noise function that is interpreted by the system. The system attributes different voxel types (e.g. air, stone, brick) for different value ranges. The block data is then used to generate the chunk meshes and colliders. The collider data is then used to spawn non-voxel objects (e.g. characters, items) in the chunk, which are placed randomly on top of ground voxels. An atlas shader takes care of texturing the chunk according to the UV data built by the mesh generation. The Unity job system is used in the most compute-intensive tasks, like in mesh and collider generation.
 
-[PROCEDURAL GENERATION GIF GOES HERE]
+![procgen3](https://github.com/paternostrox/Minecraft4Unity/assets/19597048/918fb99a-21ce-438d-8ec7-507f97e68ad6)
 
 Special thanks to bbtarzan12 for creating a good basis for procedural voxel terrain generation, which this project is built upon. His project can be found in [here](https://github.com/bbtarzan12/Unity-Procedural-Voxel-Terrain).
 
