@@ -41,4 +41,11 @@ The inventory system is similar to what you would see in the original game.
 - It has pretty much the same organizational features as the original, including:
   - Item swap: Picking an item from a slot (LMB) and placing it in an occupied slot will automatically pick the item occupying it.
   - Take half: The player can pick half the amount of a stack (RMB) in any stack with more than one items. 
-  - Eyedropper: When an item stack is being held, the player can drop items one by one in other slots. 
+  - Eyedropper: When an item stack is being held, the player can drop items one by one in other slots.
+ 
+## :seedling: How to contribute
+
+1. Fork this [repository](https://github.com/paternostrox/Minecraft4Unity).
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and test them thoroughly.
+4. Submit a [pull request](https://github.com/paternostrox/Minecraft4Unity/pulls) with a clear description of your changes.
