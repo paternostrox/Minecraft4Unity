@@ -2173,9 +2173,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Minecraft 4 Unity
+  m_text: 'Welcome to
 
-    by paternostrox'
+    Minecraft 4 Unity'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 03c36b9aee235e142ad54b017468844d, type: 2}
   m_sharedMaterial: {fileID: 2600472532152911327, guid: 03c36b9aee235e142ad54b017468844d,
