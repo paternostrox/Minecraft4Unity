@@ -1,5 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
+
+[RequireComponent(typeof(PlayerInput))]
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform target;
@@ -10,9 +13,24 @@ public class CameraController : MonoBehaviour
     Vector2 mouseLook;
     Vector2 input;
 
+    private PlayerInput m_PlayerInput;
+
+
     void Awake()
     {
         cameraTransform = transform;
+
+        m_PlayerInput = GetComponent<PlayerInput>();
+
+        var lookAction = m_PlayerInput.actions["Look"];
+        lookAction.started += OnLookAxisChanged;
+        lookAction.performed += OnLookAxisChanged;
+        lookAction.canceled += OnLookAxisChanged;
+    }
+
+    void OnLookAxisChanged(InputAction.CallbackContext context)
+    {
+        input = context.ReadValue<Vector2>();
     }
 
     void Start()
@@ -25,7 +43,6 @@ public class CameraController : MonoBehaviour
     {
         if (!GameController.IsPaused)
         {
-            input = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             input *= sensitivity;
 
             mouseLook += input;

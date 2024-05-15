@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MouseHandler : MonoBehaviour
 {
     public Transform cursorImageTransform;
-    public Image cursorImage;
 
     public bool disableOnStart;
 
@@ -24,14 +23,12 @@ public class MouseHandler : MonoBehaviour
     public void UnlockMouse()
     {
         Cursor.lockState = CursorLockMode.None;
-        cursorImage.enabled = true;
         lastPauseState = GameController.IsPaused;
     }
 
     public void LockMouse()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        cursorImage.enabled = false;
         lastPauseState = GameController.IsPaused;
     }
 
@@ -43,10 +40,6 @@ public class MouseHandler : MonoBehaviour
                 UnlockMouse();
             else
                 LockMouse();
-        }
-        if (GameController.isPaused)
-        {
-            cursorImageTransform.position = Input.mousePosition;
         }
     }
 }

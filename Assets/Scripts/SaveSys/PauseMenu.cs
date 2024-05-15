@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,22 +11,28 @@ public class PauseMenu : MonoBehaviour
     public GameObject HUDCenter;
     public GameObject[] otherPanels;
 
+    private PlayerInput m_PlayerInput;
+
+    void Awake()
+    {
+        m_PlayerInput = GetComponent<PlayerInput>();
+        var pauseAction = m_PlayerInput.actions["Pause"];
+        pauseAction.performed += OnPauseAction;
+    }
+
     private void Start()
     {
         Hide();
     }
 
-    private void Update()
+    void OnPauseAction(InputAction.CallbackContext context)
     {
-        // TO DO: USE NEW INPUT SYSTEM!!!
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isVisible)
-                Hide();
-            else
-                Show();
-        }
+        if (isVisible)
+            Hide();
+        else
+            Show();
     }
+
 
     public void Show()
     {

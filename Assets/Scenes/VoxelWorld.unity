@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1010,7 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 200926058}
   - component: {fileID: 200926057}
-  - component: {fileID: 200926056}
+  - component: {fileID: 200926059}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1018,26 +1018,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &200926056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200926055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &200926057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1068,6 +1048,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &200926059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200926055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_PointAction: {fileID: -9218119538062942064, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_MoveAction: {fileID: 7458188335781670867, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_SubmitAction: {fileID: -4670405060361892720, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_CancelAction: {fileID: -2859285527465700143, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_LeftClickAction: {fileID: 6167826794487314878, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_MiddleClickAction: {fileID: 774827817733501298, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_RightClickAction: {fileID: 8095314263638481154, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_ScrollWheelAction: {fileID: -5782915516651152657, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: -7634329024969114857, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7558417754318978033, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &214045265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1273,7 @@ GameObject:
   - component: {fileID: 243511003}
   - component: {fileID: 243511002}
   - component: {fileID: 243511006}
+  - component: {fileID: 243511007}
   m_Layer: 5
   m_Name: PauseMenu
   m_TagString: Untagged
@@ -1363,6 +1385,37 @@ MonoBehaviour:
   - {fileID: 1662739551}
   - {fileID: 994200429}
   - {fileID: 562251371}
+--- !u!114 &243511007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243511001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &287464678
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,6 +3613,7 @@ GameObject:
   - component: {fileID: 587170009}
   - component: {fileID: 587170012}
   - component: {fileID: 587170013}
+  - component: {fileID: 587170014}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3654,7 +3708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2134748502}
-  sensitivity: 3
+  sensitivity: 0.4
   height: 0.45
 --- !u!114 &587170013
 MonoBehaviour:
@@ -3716,6 +3770,37 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &587170014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587170008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerWorld
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &597739718
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,7 +4199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &674595297
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12109,6 +12194,7 @@ GameObject:
   - component: {fileID: 2107211183}
   - component: {fileID: 2107211182}
   - component: {fileID: 2107211186}
+  - component: {fileID: 2107211187}
   m_Layer: 5
   m_Name: ContainersUI
   m_TagString: Untagged
@@ -12219,11 +12305,44 @@ MonoBehaviour:
   handSlot: {fileID: 2080997724}
   selectionIndicatorUI: {fileID: 1658847765}
   HUDCenter: {fileID: 1802441402}
+  m_ScrollSensitive: 0.1
+  m_ScrollThreshold: 0.1
   graphicRaycaster: {fileID: 2107211182}
   inventoryPanel: {fileID: 577491860}
   stashPanel: {fileID: 1724770033}
   tooltip: {fileID: 307063669}
   tooltipOffset: {x: 1, y: -1, z: 0}
+--- !u!114 &2107211187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107211181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerWorld
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &2114530368
 GameObject:
   m_ObjectHideFlags: 0
@@ -12376,6 +12495,7 @@ GameObject:
   - component: {fileID: 2134748507}
   - component: {fileID: 2134748506}
   - component: {fileID: 2134748510}
+  - component: {fileID: 2134748511}
   m_Layer: 6
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -12430,7 +12550,7 @@ MonoBehaviour:
   m_WalkSpeed: 6
   m_RunSpeed: 11
   m_LimitDiagonalSpeed: 1
-  m_ToggleRun: 0
+  m_ToggleRun: 1
   m_JumpSpeed: 8
   m_Gravity: 20
   m_FallingThreshold: 10
@@ -12559,6 +12679,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a88bf0650fd1c40a5c7667a6502896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2134748511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134748501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: a5c205126ac6346e5973f81c7f8f3cf4,
+    type: 3}
+  m_NotificationBehavior: 3
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbe75d9c-202d-4698-9cc2-85b7407bcfdf
+    m_ActionName: PlayerWorld/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a0d1040-0cd1-4797-8b50-7d6264e72345
+    m_ActionName: PlayerWorld/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 89d058e3-7f94-4acf-94e9-effe7e7111da
+    m_ActionName: PlayerWorld/ScrollBar[/Mouse/scroll/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40c3b9d9-8cff-482a-a37f-9158a540cd26
+    m_ActionName: PlayerWorld/Jump[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerWorld
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &2162225582741634400
 PrefabInstance:
   m_ObjectHideFlags: 0

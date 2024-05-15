@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -7,20 +8,28 @@ public class PlayerInteraction : MonoBehaviour
     private ItemContainer inventory;
     private System.Random random = new System.Random();
 
-    private void Start()
+
+    private PlayerInput m_PlayerInput;
+
+    void Awake()
     {
         cam = Camera.main;
+
         inventory = GetComponent<ItemContainer>();
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Interact();
-        }
+
+        m_PlayerInput = GetComponent<PlayerInput>();
+        var interactAction = m_PlayerInput.actions["Interact"];
+        interactAction.performed += OnInteractAction;
     }
 
-    public bool Interact()
+    void OnInteractAction(InputAction.CallbackContext context)
+    {
+        if (GameController.IsPaused)
+            return;
+        Interact();
+    }
+
+    bool Interact()
     {
         Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;

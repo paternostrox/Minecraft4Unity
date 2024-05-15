@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 
 // FPSWalkerEnhanced
 // From Unify Community Wiki
 
 // https://wiki.unity3d.com/index.php/FPSWalkerEnhanced#FPSWalkerEnhanced.cs
 
-[RequireComponent(typeof(CharacterController))]
+[RequireComponent(typeof(CharacterController)), RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
     [Tooltip("How fast the player moves when walking (default move speed).")]
@@ -83,9 +84,15 @@ public class PlayerController : MonoBehaviour
     private int m_JumpTimer;
 
 
+    private PlayerInput m_PlayerInput;
+    private Vector2 m_MoveAxis;
+    private bool m_jumpPressed;
+
+
     private void Awake()
     {
         // Saving component references to improve performance.
+        m_PlayerInput = GetComponent<PlayerInput>();
         m_Transform = GetComponent<Transform>();
         m_Controller = GetComponent<CharacterController>();
 
@@ -94,21 +101,69 @@ public class PlayerController : MonoBehaviour
         m_RayDistance = m_Controller.height * .5f + m_Controller.radius;
         m_SlideLimit = m_Controller.slopeLimit - .1f;
         m_JumpTimer = m_AntiBunnyHopFactor;
+
+        SetupPlayerInput();
     }
 
-
-    private void Update()
+#region Input Events
+    void SetupPlayerInput()
     {
-        // If the run button is set to toggle, then switch between walk/run speed. (We use Update for this...
-        // FixedUpdate is a poor place to use GetButtonDown, since it doesn't necessarily run every frame and can miss the event)
+        var moveAction = m_PlayerInput.actions["Move"];
+        moveAction.started += OnMovementAxisChanged;
+        moveAction.performed += OnMovementAxisChanged;
+        moveAction.canceled += OnMovementAxisChanged;
 
-        float inputX = Input.GetAxis("Horizontal");
-        float inputY = Input.GetAxis("Vertical");
+        var jumpAction = m_PlayerInput.actions["Jump"];
+        jumpAction.performed += OnJumpPerformed;
+        jumpAction.canceled += OnJumpCancel;
 
-        if (m_ToggleRun && m_Grounded && Input.GetButtonDown("Run"))
+
+        var runAction = m_PlayerInput.actions["Run"];
+        runAction.performed += OnRunPerformed;
+        runAction.canceled += OnRunCancel;
+    }
+
+    void OnMovementAxisChanged(InputAction.CallbackContext ctx)
+    {
+        m_MoveAxis = ctx.ReadValue<Vector2>();
+    }
+
+    void OnJumpPerformed(InputAction.CallbackContext ctx)
+    {
+        m_jumpPressed = true;
+    }
+
+    void OnJumpCancel(InputAction.CallbackContext ctx)
+    {
+        m_jumpPressed = false;
+    }
+
+    void OnRunPerformed(InputAction.CallbackContext ctx)
+    {
+        if (m_ToggleRun)
         {
             m_Speed = (m_Speed == m_WalkSpeed ? m_RunSpeed : m_WalkSpeed);
         }
+        else
+        {
+            m_Speed = m_RunSpeed;
+        }
+    }
+
+    void OnRunCancel(InputAction.CallbackContext ctx)
+    {
+        if (!m_ToggleRun)
+        {
+            m_Speed = m_WalkSpeed;
+        }
+    }
+#endregion
+
+    private void Update()
+    {
+        float inputX = m_MoveAxis.x;
+        float inputY = m_MoveAxis.y;
+
 
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
         float inputModifyFactor = (inputX != 0.0f && inputY != 0.0f && m_LimitDiagonalSpeed) ? .7071f : 1.0f;
@@ -129,10 +184,12 @@ public class PlayerController : MonoBehaviour
             // So if the above raycast didn't catch anything, raycast down from the stored ControllerColliderHit point instead
             else
             {
-                Physics.Raycast(m_ContactPoint + Vector3.up, -Vector3.up, out m_Hit);
-                if (Vector3.Angle(m_Hit.normal, Vector3.up) > m_SlideLimit)
+                if (Physics.Raycast(m_ContactPoint + Vector3.up, -Vector3.up, out m_Hit))
                 {
-                    sliding = true;
+                    if (Vector3.Angle(m_Hit.normal, Vector3.up) > m_SlideLimit)
+                    {
+                        sliding = true;
+                    }
                 }
             }
 
@@ -144,12 +201,6 @@ public class PlayerController : MonoBehaviour
                 {
                     OnFell(m_FallStartLevel - m_Transform.position.y);
                 }
-            }
-
-            // If running isn't on a toggle, then use the appropriate speed depending on whether the run button is down
-            if (!m_ToggleRun)
-            {
-                m_Speed = Input.GetKey(KeyCode.LeftShift) ? m_RunSpeed : m_WalkSpeed;
             }
 
             // If sliding (and it's allowed), or if we're on an object tagged "Slide", get a vector pointing down the slope we're on
@@ -170,7 +221,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
-            if (!Input.GetButton("Jump"))
+            if (!m_jumpPressed)
             {
                 m_JumpTimer++;
             }
