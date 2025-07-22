@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 // Slot handling is a mess, and it starts in this class
 // It works but it should really be handled in a better way.
@@ -21,6 +22,27 @@ public class ContainerManager : Singleton<ContainerManager>
     public RectTransform selectionIndicatorUI;
 
     public GameObject HUDCenter;
+
+    private PlayerInput m_PlayerInput;
+    [SerializeField]
+    private float m_ScrollSensitive = 0.5f;
+    [SerializeField]
+    private float m_ScrollThreshold = 0.5f;
+
+    void Awake()
+    {
+        m_PlayerInput = GetComponent<PlayerInput>();
+        var inventoryAction = m_PlayerInput.actions["Interact"];
+        inventoryAction.performed += OnInventoryPerfomed;
+
+        var scrollBarAction = m_PlayerInput.actions["ScrollBar"];
+        scrollBarAction.started += OnScrollBarChanged;
+        scrollBarAction.performed += OnScrollBarChanged;
+        scrollBarAction.canceled += OnScrollBarChanged;
+
+        var mouseAction = m_PlayerInput.actions["Place"];
+        mouseAction.performed += OnMouseClickPerformed;
+    }
 
     private void Start()
     {
@@ -55,34 +77,41 @@ public class ContainerManager : Singleton<ContainerManager>
         RefreshInventory(); // FreshPrince™
     }
 
-    bool isVisible = false;
-    private void Update()
+    void OnInventoryPerfomed(InputAction.CallbackContext context)
     {
-        // TO DO: USE NEW INPUT SYSTEM!!!
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            if (isVisible)
-                Hide();
-            else
-                Show();
-        }
-        CheckChangeSelection();
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameController.IsPaused)
-        {
-            UseHotbarItem(selectedHotbarSlotIndex);
-        }
+        if (GameController.IsPaused)
+            return;
+
+        if (isVisible)
+            Hide();
+        else
+            Show();
     }
 
-    public void CheckChangeSelection()
+    void OnScrollBarChanged(InputAction.CallbackContext context)
     {
-        float wheelInput = Input.GetAxis("Mouse ScrollWheel");
-        if (!(wheelInput.Equals(0f)))
+        float value = context.ReadValue<float>() * m_ScrollSensitive;
+        if (value > m_ScrollThreshold)
+            selectedHotbarSlotIndex = (selectedHotbarSlotIndex + 1) % hotbarSlotIDs.Length;
+        else if (value < -m_ScrollThreshold)
         {
-            selectedHotbarSlotIndex = (selectedHotbarSlotIndex + (int)Mathf.Sign(wheelInput)) % hotbarSlotIDs.Length;
+            selectedHotbarSlotIndex = selectedHotbarSlotIndex - 1;
             if (selectedHotbarSlotIndex < 0) selectedHotbarSlotIndex += hotbarSlotIDs.Length;
-            selectionIndicatorUI.anchoredPosition = new Vector3(15f + selectedHotbarSlotIndex * 17f, .25f, 0f);
         }
+        selectionIndicatorUI.anchoredPosition = new Vector3(15f + selectedHotbarSlotIndex * 17f, .25f, 0f);
     }
+
+    void OnMouseClickPerformed(InputAction.CallbackContext context)
+    {
+        if (GameController.IsPaused)
+            return;
+
+            UseHotbarItem(selectedHotbarSlotIndex);
+    }
+
+
+    bool isVisible = false;
+
 
     public void UseHotbarItem(int slotIndex)
     {
